@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 import java.io.IOException;
 import java.util.List;
@@ -149,7 +149,7 @@ public class PacienteControllerServlet extends HttpServlet {
 	//ADCIONA
 	private void addPaciente(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// le informaï¿½ï¿½es de paciente do form recebido
+		// le informações de paciente do form recebido
 		
 		//int codPaciente = Integer.parseInt(request.getParameter("pacienteId"));
 		String nomePaciente = request.getParameter("nomePaciente");

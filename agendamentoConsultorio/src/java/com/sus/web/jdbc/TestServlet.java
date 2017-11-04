@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 import java.io.IOException;
 import java.io.PrintWriter;

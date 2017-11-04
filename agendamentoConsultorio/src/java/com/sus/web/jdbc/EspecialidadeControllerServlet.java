@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 import java.io.IOException;
 import java.util.List;
@@ -150,7 +150,7 @@ public class EspecialidadeControllerServlet extends HttpServlet {
 	//ADCIONA
 	private void addEspecialidade(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// le informaï¿½ï¿½es de especialidade do form recebido
+		// le informações de especialidade do form recebido
 		//String codEspecialidade = request.getParameter("codEspecialidade");
 		String nomeEspecialidade = request.getParameter("nomeEspecialidade");	
 		

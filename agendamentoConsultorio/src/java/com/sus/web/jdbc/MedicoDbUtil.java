@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -172,7 +172,7 @@ public class MedicoDbUtil {
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
 		ResultSet myRs = null;
-		int localMedicoId; //este ï¿½ o codMedico
+		int localMedicoId; //este é o codMedico
 		
 		try {
 			// convert medico id to int
@@ -215,7 +215,7 @@ public class MedicoDbUtil {
 						emailMedico, telefoneMedico, datanascMedico);
 			}
 			else {
-				throw new Exception("Nï¿½o foi possï¿½vel encontrar medico: " + localMedicoId);
+				throw new Exception("Não foi possível encontrar medico: " + localMedicoId);
 			}				
 			
 			return medico;

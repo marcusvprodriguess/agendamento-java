@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 public class Paciente {
 

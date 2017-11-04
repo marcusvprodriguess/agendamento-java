@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -213,7 +213,7 @@ public class PacienteDbUtil {
 						emailPaciente, telefonePaciente, datanascPaciente);
 			}
 			else {
-				throw new Exception("Nï¿½o foi possï¿½vel encontrar paciente: " + localPacienteId);
+				throw new Exception("Não foi possível encontrar paciente: " + localPacienteId);
 			}				
 			
 			return paciente;

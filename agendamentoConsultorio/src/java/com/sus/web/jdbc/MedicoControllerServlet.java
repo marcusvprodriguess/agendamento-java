@@ -1,4 +1,4 @@
-package src;
+package com.sus.web.jdbc;
 
 import java.io.IOException;
 import java.util.List;
@@ -114,7 +114,7 @@ public class MedicoControllerServlet extends HttpServlet {
     ds_Email VARCHAR(50),
     dt_Nascimento DATE,*/
 		// read student info from form data
-		int codMedico = Integer.parseInt(request.getParameter("medicoId")); //ID ï¿½ o campo identificador sequencial
+		int codMedico = Integer.parseInt(request.getParameter("medicoId")); //ID é o campo identificador sequencial
 		int crmMedico = Integer.parseInt(request.getParameter("crmMedico"));
 		String nomeMedico = request.getParameter("nomeMedico");
 		String especialidadeMedico = request.getParameter("especialidadeMedico");
@@ -163,7 +163,7 @@ public class MedicoControllerServlet extends HttpServlet {
 	//ADCIONA
 	private void addMedico(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// le informaï¿½ï¿½es de medico do form recebido
+		// le informações de medico do form recebido
 		
 		int crmMedico = Integer.parseInt(request.getParameter("crmMedico"));
 		String nomeMedico = request.getParameter("nomeMedico");
@@ -178,7 +178,7 @@ public class MedicoControllerServlet extends HttpServlet {
 		String telefoneMedico = request.getParameter("telefoneMedico");
 		String datanascMedico = request.getParameter("datanascMedico");
 		
-		// cria novo objeto medico - chama construtor com CRM pois este ï¿½ digitado
+		// cria novo objeto medico - chama construtor com CRM pois este é digitado
 		Medico medico = new Medico(crmMedico, nomeMedico, especialidadeMedico, rgMedico, cpfMedico, 
 				enderecoMedico, cidadeMedico, bairroMedico, estadoMedico,
 				emailMedico, telefoneMedico, datanascMedico);
