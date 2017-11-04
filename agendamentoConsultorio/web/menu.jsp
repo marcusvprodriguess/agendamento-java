@@ -19,6 +19,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
