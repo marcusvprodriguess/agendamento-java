@@ -115,7 +115,8 @@ public class MedicoControllerServlet extends HttpServlet {
 		MedicoDbUtil.deleteMedico(localMedicoId);
 		
 		// send them back to "list students" page
-		listMedico(request, response);
+		//listMedico(request, response);
+		response.sendRedirect("./MedicoControllerServlet");
 	}
 
 	//ATUALIZA
@@ -158,7 +159,8 @@ public class MedicoControllerServlet extends HttpServlet {
 		MedicoDbUtil.updateMedico(medico);
 		
 		// send them back to the "list students" page
-		listMedico(request, response);
+		//listMedico(request, response);
+		response.sendRedirect("./MedicoControllerServlet");
 		
 	}
 
@@ -208,7 +210,8 @@ public class MedicoControllerServlet extends HttpServlet {
 		MedicoDbUtil.addMedico(medico);
 				
 		// send back to main page (the medico list)
-		listMedico(request, response);
+		//listMedico(request, response);
+		response.sendRedirect("./MedicoControllerServlet");
 	}
 
 	//LISTA 

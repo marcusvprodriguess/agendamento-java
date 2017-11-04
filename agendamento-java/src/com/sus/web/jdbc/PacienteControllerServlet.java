@@ -94,7 +94,8 @@ public class PacienteControllerServlet extends HttpServlet {
 		PacienteDbUtil.deletePaciente(localPacienteId);
 		
 		// send them back to "list students" page
-		listPaciente(request, response);
+		//listPaciente(request, response);
+		response.sendRedirect("./PacienteControllerServlet");
 	}
 
 	//ATUALIZA
@@ -123,7 +124,8 @@ public class PacienteControllerServlet extends HttpServlet {
 		PacienteDbUtil.updatePaciente(paciente);
 		
 		// send them back to the "list students" page
-		listPaciente(request, response);
+		//listPaciente(request, response);
+		response.sendRedirect("./PacienteControllerServlet");
 		
 	}
 
@@ -172,7 +174,8 @@ public class PacienteControllerServlet extends HttpServlet {
 		PacienteDbUtil.addPaciente(paciente);
 				
 		// send back to main page (the student list)
-		listPaciente(request, response);
+		//listPaciente(request, response);
+		response.sendRedirect("./PacienteControllerServlet");
 	}
 
 	//LISTA 

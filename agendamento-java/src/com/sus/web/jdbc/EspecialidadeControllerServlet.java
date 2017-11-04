@@ -154,7 +154,8 @@ public class EspecialidadeControllerServlet extends HttpServlet {
 		EspecialidadeDbUtil.deleteEspecialidade(localEspecialidadeId);
 		
 		// send them back to "list students" page
-		listEspecialidade(request, response);
+		response.sendRedirect("./EspecialidadeControllerServlet");
+		//listEspecialidade(request, response);
 	}
 
 	//ATUALIZA
@@ -173,7 +174,8 @@ public class EspecialidadeControllerServlet extends HttpServlet {
 		EspecialidadeDbUtil.updateEspecialidade(especialidade);
 		
 		// send them back to the "list students" page
-		listEspecialidade(request, response);
+		response.sendRedirect("./EspecialidadeControllerServlet");
+		//listEspecialidade(request, response);
 		
 	}
 
@@ -191,9 +193,9 @@ public class EspecialidadeControllerServlet extends HttpServlet {
 		request.setAttribute("ESPECIALIDADE", especialidade);
 		
 		// send to jsp page: update-student-form.jsp
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/atualiza-especialidade.jsp");
-		dispatcher.forward(request, response);		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/atualiza-especialidade.jsp");
+		dispatcher.forward(request, response);
+		
 	}
 
 	//ADCIONA
@@ -210,7 +212,8 @@ public class EspecialidadeControllerServlet extends HttpServlet {
 		EspecialidadeDbUtil.addEspecialidade(especialidade);
 				
 		// send back to main page (the student list)
-		listEspecialidade(request, response);
+		//listEspecialidade(request, response);
+		response.sendRedirect("./EspecialidadeControllerServlet");
 	}
 
 	//LISTA 
@@ -226,6 +229,8 @@ public class EspecialidadeControllerServlet extends HttpServlet {
 		// send to JSP page (view)
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/list-especialidades.jsp");
 		dispatcher.forward(request, response);
+		//response.sendRedirect("./EspecialidadeControllerServlet?command=LIST");
+		
 	}
 
 }

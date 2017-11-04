@@ -94,7 +94,8 @@ public class UsuarioControllerServlet extends HttpServlet {
 		UsuarioDbUtil.deleteUsuario(localUsuarioId);
 		
 		// send them back to "list students" page
-		listUsuario(request, response);
+		//listUsuario(request, response);
+		response.sendRedirect("./UsuarioControllerServlet");
 	}
 
 	//ATUALIZA
@@ -116,7 +117,8 @@ public class UsuarioControllerServlet extends HttpServlet {
 		UsuarioDbUtil.updateUsuario(usuario);
 		
 		// send them back to the "list students" page
-		listUsuario(request, response);
+		//listUsuario(request, response);
+		response.sendRedirect("./UsuarioControllerServlet");
 		
 	}
 
@@ -158,7 +160,8 @@ public class UsuarioControllerServlet extends HttpServlet {
 		UsuarioDbUtil.addUsuario(usuario);
 				
 		// send back to main page (the student list)
-		listUsuario(request, response);
+		//listUsuario(request, response);
+		response.sendRedirect("./UsuarioControllerServlet");
 	}
 
 	//LISTA 

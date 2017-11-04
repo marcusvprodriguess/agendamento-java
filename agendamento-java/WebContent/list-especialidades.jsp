@@ -15,7 +15,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>Agendamento de Consultas SUS</h2>
+			<h2>Lista de Especialidades Cadastradas</h2>
 		</div>
 	</div>
 
