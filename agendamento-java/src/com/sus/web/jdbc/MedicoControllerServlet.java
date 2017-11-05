@@ -139,7 +139,7 @@ public class MedicoControllerServlet extends HttpServlet {
 		int codMedico = Integer.parseInt(request.getParameter("medicoId")); //ID é o campo identificador sequencial
 		int crmMedico = Integer.parseInt(request.getParameter("crmMedico"));
 		String nomeMedico = request.getParameter("nomeMedico");
-		String especialidadeMedico = request.getParameter("especialidadeMedico");
+		int especialidadeMedico = Integer.parseInt(request.getParameter("especialidadeMedico"));
 		int rgMedico = Integer.parseInt(request.getParameter("rgMedico"));
 		int cpfMedico = Integer.parseInt(request.getParameter("cpfMedico"));
 		String enderecoMedico = request.getParameter("enderecoMedico");
@@ -190,7 +190,7 @@ public class MedicoControllerServlet extends HttpServlet {
 		
 		int crmMedico = Integer.parseInt(request.getParameter("crmMedico"));
 		String nomeMedico = request.getParameter("nomeMedico");
-		String especialidadeMedico = request.getParameter("especialidadeMedico");
+		int especialidadeMedico = Integer.parseInt(request.getParameter("especialidadeMedico"));
 		int rgMedico = Integer.parseInt(request.getParameter("rgMedico"));
 		int cpfMedico = Integer.parseInt(request.getParameter("cpfMedico"));
 		String enderecoMedico = request.getParameter("enderecoMedico");

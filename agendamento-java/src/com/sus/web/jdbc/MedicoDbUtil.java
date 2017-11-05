@@ -57,7 +57,7 @@ public class MedicoDbUtil {
 				int codMedico = myRs.getInt("cd_Medico");
 				int crmMedico = myRs.getInt("crm_Medico");
 				String nomeMedico = myRs.getString("nm_Medico");
-				String especialidadeMedico = myRs.getString("cd_Especialidade");
+				int especialidadeMedico = myRs.getInt("cd_Especialidade");
 				int rgMedico = myRs.getInt("cd_RG");
 				int cpfMedico = myRs.getInt("cd_CPF");
 				String enderecoMedico = myRs.getString("ds_Endereco");
@@ -145,7 +145,7 @@ public class MedicoDbUtil {
 			//myStmt.setInt(1, medico.getCodMedico());
 			myStmt.setInt(1, medico.getCrmMedico());
 			myStmt.setString(2, medico.getNomeMedico());
-			myStmt.setString(3, medico.getEspecialidadeMedico());
+			myStmt.setInt(3, medico.getEspecialidadeMedico());
 			myStmt.setInt(4, medico.getRgMedico());
 			myStmt.setInt(5, medico.getCpfMedico());
 			myStmt.setString(6, medico.getEnderecoMedico());
@@ -197,7 +197,7 @@ public class MedicoDbUtil {
 			if (myRs.next()) {
 				int crmMedico = myRs.getInt("crm_Medico");
 				String nomeMedico = myRs.getString("nm_Medico");
-				String especialidadeMedico = myRs.getString("cd_Especialidade");
+				int especialidadeMedico = myRs.getInt("cd_Especialidade");
 				int rgMedico = myRs.getInt("cd_RG");
 				int cpfMedico = myRs.getInt("cd_CPF");
 				String enderecoMedico = myRs.getString("ds_Endereco");
@@ -247,7 +247,7 @@ public class MedicoDbUtil {
 			// set params		
 			myStmt.setInt(1, medico.getCrmMedico());
 			myStmt.setString(2, medico.getNomeMedico());
-			myStmt.setString(3, medico.getEspecialidadeMedico());
+			myStmt.setInt(3, medico.getEspecialidadeMedico());
 			myStmt.setInt(4, medico.getRgMedico());
 			myStmt.setInt(5, medico.getCpfMedico());
 			myStmt.setString(6, medico.getEnderecoMedico());

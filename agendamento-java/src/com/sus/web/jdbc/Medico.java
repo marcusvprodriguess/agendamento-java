@@ -19,7 +19,7 @@ public class Medico {
 	private int codMedico;
 	private int crmMedico;
 	private String nomeMedico;
-	private String especialidadeMedico;
+	private int especialidadeMedico;
 	private int rgMedico;
 	private int cpfMedico;
 	private String enderecoMedico;
@@ -33,7 +33,7 @@ public class Medico {
 	
 	
 	
-	public Medico(int codMedico, int crmMedico, String nomeMedico, String especialidadeMedico, int rgMedico, int cpfMedico,
+	public Medico(int codMedico, int crmMedico, String nomeMedico, int especialidadeMedico, int rgMedico, int cpfMedico,
 			String enderecoMedico, String cidadeMedico, String bairroMedico, String estadoMedico, String emailMedico,
 			String telefoneMedico, String datanascMedico) {
 		this.codMedico = codMedico;
@@ -51,7 +51,7 @@ public class Medico {
 		this.datanascMedico = datanascMedico;
 	}
 
-	public Medico(int crmMedico, String nomeMedico, String especialidadeMedico, int rgMedico, int cpfMedico,
+	public Medico(int crmMedico, String nomeMedico, int especialidadeMedico, int rgMedico, int cpfMedico,
 			String enderecoMedico, String cidadeMedico, String bairroMedico, String estadoMedico, String emailMedico,
 			String telefoneMedico, String datanascMedico) {
 		this.crmMedico = crmMedico;
@@ -94,11 +94,11 @@ public class Medico {
 		this.nomeMedico = nomeMedico;
 	}
 
-	public String getEspecialidadeMedico() {
+	public int getEspecialidadeMedico() {
 		return especialidadeMedico;
 	}
 
-	public void setEspecialidadeMedico(String especialidadeMedico) {
+	public void setEspecialidadeMedico(int especialidadeMedico) {
 		this.especialidadeMedico = especialidadeMedico;
 	}
 

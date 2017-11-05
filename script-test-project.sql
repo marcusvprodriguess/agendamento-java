@@ -40,7 +40,7 @@ CREATE TABLE Medico(
 	cd_Medico INT NOT NULL auto_increment,
 	nm_Medico VARCHAR(50),
 	crm_Medico INT,   
-    cd_Especialidade VARCHAR(10),
+    cd_Especialidade INT,
 	cd_RG INT(11),
     cd_CPF INT(11),     
 	ds_Endereco VARCHAR (50),
@@ -53,7 +53,7 @@ CREATE TABLE Medico(
 	PRIMARY KEY (cd_Medico)
 	);
 	
-INSERT INTO Medico VALUES (1, 'Dr House', 12345, 'ESPEC', 55544, 67766, 'Rua dos medicos, 54', 'Medicity', 'Bairro Tal', 'SP', '34235545', 'medico@medico.com', '01/01/1901');
+INSERT INTO Medico VALUES (1, 'Dr House', 12345, 1, 55544, 67766, 'Rua dos medicos, 54', 'Medicity', 'Bairro Tal', 'SP', '34235545', 'medico@medico.com', '01/01/1901');
 
 CREATE TABLE Usuario(
 	cd_Usuario INT,
