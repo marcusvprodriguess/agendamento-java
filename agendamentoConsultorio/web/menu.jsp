@@ -49,9 +49,9 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="EspecialidadeControllerServlet">Especialidade</a></li>
-                    <li><a href="medicos.html">Médico</a></li>
+                    <li><a href="EspecialidadeControllerServlet">Médico</a></li>
                     <li><a  href="PacienteControllerServlet">Paciente</a></li>
-                    <li><a href="MedicoControllerServlet">Usuário</a></li>
+                    <li><a href="#">Usuário</a></li>
                   </ul>
                   </li>  
                   <li class="dropdown">
