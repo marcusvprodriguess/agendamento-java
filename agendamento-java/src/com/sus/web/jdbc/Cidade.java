@@ -17,11 +17,11 @@ public class Cidade {
 		this.nomeCidade = nomeCidade;
 	}
 
-	public String getSgCidade() {
+	public String getSgEstado() {
 		return sgEstado;
 	}
 
-	public void setSgCidade(String sgEstado) {
+	public void setSgEstado(String sgEstado) {
 		this.sgEstado = sgEstado;
 	}
 
@@ -31,6 +31,16 @@ public class Cidade {
 
 	public void setNomeCidade(String nomeCidade) {
 		this.nomeCidade = nomeCidade;
+	}
+
+	
+	
+	public int getCodCidade() {
+		return codCidade;
+	}
+
+	public void setCodCidade(int codCidade) {
+		this.codCidade = codCidade;
 	}
 
 	@Override

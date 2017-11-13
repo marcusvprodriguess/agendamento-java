@@ -32,7 +32,7 @@
 					<th>Nome</th>
 				</tr>
 				
-				<c:forEach var="tempCidade" items="${CIDADE_LIST}">
+			 	<c:forEach var="tempCidade" items="${CIDADE_LIST}">
 					
 																		
 					<tr>
@@ -42,7 +42,7 @@
 
 					</tr>
 				
-				</c:forEach>
+				</c:forEach> 
 				
 			</table>
 		

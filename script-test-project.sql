@@ -56,15 +56,15 @@ CREATE TABLE Medico(
 INSERT INTO Medico VALUES (1, 'Dr House', 12345, 1, 55544, 67766, 'Rua dos medicos, 54', 'Medicity', 'Bairro Tal', 'SP', '34235545', 'medico@medico.com', '01/01/1901');
 
 CREATE TABLE Usuario(
-	cd_Usuario INT,
+	cd_Usuario INT NOT NULL auto_increment,
 	nm_Usuario VARCHAR(20),
     nm_Login VARCHAR(10),
     ds_Senha VARCHAR(10),
-    ds_Usuario VARCHAR(10),
+    ds_Usuario VARCHAR(20),
     PRIMARY KEY (cd_Usuario)
 );
 
-INSERT INTO Usuario VALUES (1, 'Administrador', 'admin', 'admin', 'admini');
+INSERT INTO Usuario VALUES (1, 'Administrador', 'admin', 'admin', 'Admin');
 
 
 CREATE TABLE Estado(
@@ -74,7 +74,7 @@ CREATE TABLE Estado(
 );
 
 CREATE TABLE Cidade(
-    cd_Cidade INT,
+    cd_Cidade INT NOT NULL auto_increment,
 	sg_Estado CHAR(2),
 	nm_Cidade VARCHAR(40),
     PRIMARY KEY (cd_Cidade),
@@ -111,13 +111,13 @@ INSERT INTO Estado VALUES ('AC', 'Acre') ,
 ('TO', 'Tocantins')
 ;
 
-INSERT INTO Cidade VALUES(1 , 'SP', 'Bertioga '),
-(2 , 'SP', 'Cubatão '),
-(3 , 'SP', 'Guarujá '),
-(4 , 'SP', 'Itanhaém '),
-(5 , 'SP', 'Mongaguá '),
-(6 , 'SP', 'Peruíbe '),
-(7 , 'SP', 'Praia Grande '),
-(8 , 'SP', 'Santos '),
-(9 , 'SP', 'São Vicente ')
+INSERT INTO Cidade VALUES(1 , 'SP', 'Bertioga'),
+(2 , 'SP', 'Cubatão'),
+(3 , 'SP', 'Guarujá'),
+(4 , 'SP', 'Itanhaém'),
+(5 , 'SP', 'Mongaguá'),
+(6 , 'SP', 'Peruíbe'),
+(7 , 'SP', 'Praia Grande'),
+(8 , 'SP', 'Santos'),
+(9 , 'SP', 'São Vicente')
 ;

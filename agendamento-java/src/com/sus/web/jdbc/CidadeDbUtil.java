@@ -30,7 +30,7 @@ public class CidadeDbUtil {
 			myConn = dataSource.getConnection();
 			
 			// create sql statement
-			String sql = "select * from cidade order by sg_Estado";
+			String sql = "select * from cidade order by nm_Cidade";
 			
 			myStmt = myConn.createStatement();
 			
@@ -177,7 +177,7 @@ public class CidadeDbUtil {
 			
 			// set params
 			myStmt.setString(1, cidade.getNomeCidade());
-			myStmt.setString(2, cidade.getSgCidade());
+			myStmt.setString(2, cidade.getSgEstado());
 			
 			
 			// execute SQL statement
