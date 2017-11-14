@@ -32,7 +32,7 @@
 
 					<tr>
 						<td><label>Especialidade:</label></td>
-						<td><input type="text" name="nomeEspecialidade" placeholder="Especialidade" /></td>
+						<td><input type="text" name="nomeEspecialidade" placeholder="Especialidade" maxlength="30" /></td>
 					</tr>							
 					
 					<tr>					

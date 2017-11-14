@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 <head>
@@ -42,21 +43,30 @@
 
 					<tr>
 						<td><label>RG:</label></td>
-						<td><input type="text" name="rgPaciente" placeholder="12345678900" maxlength="11"/></td>
+						<td><input type="number" name="rgPaciente" placeholder="12345678900" maxlength="11"/></td>
 					</tr>
 					
 					<tr>
 						<td><label>CPF:</label></td>
-						<td><input type="text" name="cpfPaciente" placeholder="00987654321" maxlength="11"/></td>
+						<td><input type="number" name="cpfPaciente" placeholder="00987654321" maxlength="11"/></td>
 					</tr>
 					<tr>
 						<td><label>Endereço:</label></td>
 						<td><input type="text" name="enderecoPaciente" placeholder="Rua Xyz, 000" maxlength="50"/></td>
 					</tr>
+					
 					<tr>
 						<td><label>Cidade:</label></td>
-						<td><input type="text" name="cidadePaciente" placeholder="Minha Cidade" maxlength="20" /></td>
+						<td>
+						<select name="cidadePaciente">
+    						<c:forEach items="${CIDADES_FORM}" var="tempCid">
+        						<option value="${tempCid.codCidade}"><c:out value="${tempCid.nomeCidade}" /></option>
+    						</c:forEach>
+						</select>
+						</td>
+						<!-- <td><input type="text" name="cidadePaciente" placeholder="Minha Cidade" maxlength="20" /></td> -->
 					</tr>
+					
 					<tr>
 						<td><label>Bairro:</label></td>
 						<td><input type="text" name="bairroPaciente" placeholder="Meu Bairro" maxlength="20" /></td>
@@ -67,16 +77,16 @@
 					</tr>
 					<tr>
 						<td><label>Telefone:</label></td>
-						<td><input type="text" name="telefonePaciente" placeholder="2345678" maxlength="20"/></td>
+						<td><input type="tel" name="telefonePaciente" placeholder="2345678" maxlength="20"/></td>
 					</tr>
 					<tr>
 						<td><label>E-Mail:</label></td>
-						<td><input type="text" name="emailPaciente" placeholder="email@email.com" maxlength="50" /></td>
+						<td><input type="email" name="emailPaciente" placeholder="email@email.com" maxlength="50" /></td>
 					</tr>
 					
 					<tr>
 						<td><label>Nascimento:</label></td>
-						<td><input type="text" name="datanascPaciente" value="" /></td>
+						<td><input type="date" name="datanascPaciente" placeholder="00/00/0000" /></td>
 					</tr>
 					
 					<tr>

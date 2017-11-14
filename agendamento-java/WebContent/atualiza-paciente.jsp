@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 <head>
@@ -53,8 +54,24 @@
 					
 						<tr>
 						<td><label>Cidade:</label></td>
-						<td><input type="text" name="cidadePaciente" maxlength="20"
-								   value="${PACIENTE.cidadePaciente}" /></td>
+						<td>
+							<select name="cidadePaciente">	
+							<c:forEach items="${CIDADES_FORM}" var="tempCid">
+												
+								<c:choose>
+										<c:when test="${tempCid.codCidade == PACIENTE.cidadePaciente }">
+											<option value="${tempCid.codCidade}" selected><c:out value="${tempCid.nomeCidade }"/></option>
+										</c:when>
+									<c:otherwise>
+										<option value="${tempCid.codCidade}"><c:out value="${tempCid.nomeCidade }"/></option>
+									</c:otherwise>
+								</c:choose>
+								</c:forEach>
+
+							</select>
+						</td>
+						<!-- <td><input type="text" name="cidadePaciente" maxlength="20"
+								   value="${PACIENTE.cidadePaciente}" /></td> -->
 					</tr>	
 					
 						<tr>

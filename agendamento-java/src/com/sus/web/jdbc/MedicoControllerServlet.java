@@ -23,6 +23,7 @@ public class MedicoControllerServlet extends HttpServlet {
 
 	private MedicoDbUtil MedicoDbUtil;
 	private EspecialidadeDbUtil EspecialidadeDbUtil;
+	private CidadeDbUtil CidadeDbUtil;
 	
 	@Resource(name="jdbc/sus_agendamento")
 	private DataSource dataSource;
@@ -60,7 +61,7 @@ public class MedicoControllerServlet extends HttpServlet {
 				break;
 				
 			case "CADASTRO":
-				getEspecialidadesMedico(request, response);
+				formMedico(request, response);
 				break;
 				
 			case "ADD":
@@ -90,21 +91,34 @@ public class MedicoControllerServlet extends HttpServlet {
 		
 	}
 	
+	private void formMedico(HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+			getDadosParaForm(request, response);		
+		
+			// send to JSP page (view)
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-medico.jsp");
+			dispatcher.forward(request, response);
+
+	}
+	
 	//teste
-	private void getEspecialidadesMedico(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	private void getDadosParaForm(HttpServletRequest request, HttpServletResponse response) throws Exception{
 
 		EspecialidadeDbUtil = new EspecialidadeDbUtil(dataSource);	
 		List<Especialidade> listEsp = EspecialidadeDbUtil.getEspecialidades();
 			
 		request.setAttribute("ESPECIALIDADES_FORM", listEsp);
 			
-			// send to JSP page (view)
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-medico.jsp");
-			dispatcher.forward(request, response);
+		CidadeDbUtil = new CidadeDbUtil(dataSource);
+		List<Cidade> listCid = CidadeDbUtil.getCidades();
+		
+		request.setAttribute("CIDADES_FORM", listCid);	
+
 
 	}
-	//APAGA
 	
+	
+	//APAGA
 	private void deleteMedico(HttpServletRequest request, HttpServletResponse response)
 		throws Exception {
 
@@ -176,6 +190,9 @@ public class MedicoControllerServlet extends HttpServlet {
 		
 		// place student in the request attribute
 		request.setAttribute("MEDICO", medico);
+		
+		//seta parametros usados para dropdown no request
+		getDadosParaForm(request, response);
 		
 		// send to jsp page: update-student-form.jsp
 		RequestDispatcher dispatcher = 

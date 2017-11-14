@@ -44,7 +44,7 @@
 					
 					<tr>
 						<td><label>CRM:</label></td>
-						<td><input type="text" name="crmMedico" placeholder="98128734" maxlength="20"/></td>
+						<td><input type="number" name="crmMedico" placeholder="98128734" maxlength="20"/></td>
 					</tr>
 					
 					<tr>
@@ -61,41 +61,50 @@
 
 					<tr>
 						<td><label>RG:</label></td>
-						<td><input type="text" name="rgMedico" placeholder="12345678900" maxlength="11"/></td>
+						<td><input type="number" name="rgMedico" placeholder="12345678900" maxlength="11"/></td>
 					</tr>
 					
 					<tr>
 						<td><label>CPF:</label></td>
-						<td><input type="text" name="cpfMedico" placeholder="00987654321" maxlength="11" /></td>
+						<td><input type="number" name="cpfMedico" placeholder="00987654321" maxlength="11" /></td>
 					</tr>
 					<tr>
 						<td><label>Endereço:</label></td>
 						<td><input type="text" name="enderecoMedico" placeholder="Rua ZYX, 999" maxlength="50"/></td>
 					</tr>
+					
 					<tr>
 						<td><label>Cidade:</label></td>
-						<td><input type="text" name="cidadeMedico" placeholder="Minha Cidade" maxlength="20"/></td>
+						<td>
+						<select name="cidadeMedico" >
+    						<c:forEach items="${CIDADES_FORM}" var="tempCid">
+        						<option value="${tempCid.codCidade}"><c:out value="${tempCid.nomeCidade}" /></option>
+    						</c:forEach>
+						</select>
+						</td>
+						<!-- <td><input type="text" name="cidadeMedico" placeholder="Minha Cidade" maxlength="20"/></td> -->
 					</tr>
+					
 					<tr>
 						<td><label>Bairro:</label></td>
-						<td><input type="text" name="bairroMedico" value="" /></td>
+						<td><input type="text" name="bairroMedico" maxlength="20" placeholder="Meu Bairro"/></td>
 					</tr>
 					<tr>
 						<td><label>Estado:</label></td>
-						<td><input type="text" name="estadoMedico" value="" /></td>
+						<td><input type="text" name="estadoMedico" maxlength="2" placeholder="SP"/></td>
 					</tr>
 					<tr>
 						<td><label>Telefone:</label></td>
-						<td><input type="text" name="telefoneMedico" placeholder="555666000" maxlength="20"/></td>
+						<td><input type="tel" name="telefoneMedico" placeholder="555666000" maxlength="20"/></td>
 					</tr>
 					<tr>
 						<td><label>E-Mail:</label></td>
-						<td><input type="text" name="emailMedico" placeholder="mymail@mymail.com" maxlength="50"/></td>
+						<td><input type="email" name="emailMedico" placeholder="mymail@mymail.com" maxlength="50"/></td>
 					</tr>
 					
 					<tr>
 						<td><label>Nascimento:</label></td>
-						<td><input type="text" name="datanascMedico" value="" /></td>
+						<td><input type="date" name="datanascMedico" placeholder="00/00/0000"/></td>
 					</tr>
 					
 					<tr>

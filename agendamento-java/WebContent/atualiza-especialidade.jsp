@@ -18,7 +18,7 @@
 	<div id="container">
 		<h3>Atualizar Especialidade</h3>
 		
-		<form action="EspecialidadeControllerServlet" method="GET">
+		<form action="EspecialidadeControllerServlet" method="POST">
 		
 			<input type="hidden" name="command" value="UPDATE" />
 
@@ -30,7 +30,8 @@
 					<tr>
 						<td><label>Nome:</label></td>
 						<td><input type="text" name="nomeEspecialidade" 
-								   value="${ESPECIALIDADE.nomeEspecialidade}" /></td>
+								   value="${ESPECIALIDADE.nomeEspecialidade}"
+								   maxlength="30" /></td>
 					</tr>				
 					
 					<tr>

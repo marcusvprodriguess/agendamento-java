@@ -20,6 +20,7 @@ public class PacienteControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private PacienteDbUtil PacienteDbUtil;
+	private CidadeDbUtil CidadeDbUtil;
 	
 	@Resource(name="jdbc/sus_agendamento")
 	private DataSource dataSource;
@@ -56,6 +57,10 @@ public class PacienteControllerServlet extends HttpServlet {
 				listPaciente(request, response);
 				break;
 				
+			case "CADASTRO":
+				formPaciente(request, response);
+				break;	
+				
 			case "ADD":
 				addPaciente(request, response);
 				break;
@@ -83,6 +88,29 @@ public class PacienteControllerServlet extends HttpServlet {
 		
 	}
 
+	
+	private void getDadosParaForm(HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+		CidadeDbUtil = new CidadeDbUtil(dataSource);
+		List<Cidade> listCid = CidadeDbUtil.getCidades();
+		
+		request.setAttribute("CIDADES_FORM", listCid);	
+
+
+	}
+	
+	
+	private void formPaciente(HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+		getDadosParaForm(request, response);		
+	
+		// send to JSP page (view)
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-paciente.jsp");
+		dispatcher.forward(request, response);
+
+}
+	
+	
 	//APAGA
 	private void deletePaciente(HttpServletRequest request, HttpServletResponse response)
 		throws Exception {
@@ -141,6 +169,9 @@ public class PacienteControllerServlet extends HttpServlet {
 		
 		// place student in the request attribute
 		request.setAttribute("PACIENTE", paciente);
+		
+		//seta parametros usados para dropdown no request
+		getDadosParaForm(request, response);
 		
 		// send to jsp page: update-student-form.jsp
 		RequestDispatcher dispatcher = 

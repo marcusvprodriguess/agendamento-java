@@ -21,12 +21,19 @@
 	
 		<div id="content">
 		
-			<!-- put new button: Add Paciente -->
+			<!-- put new button: Add Paciente 
 			
 			<input type="button" value="Cadastrar Paciente" 
 				   onclick="window.location.href='cadastro-paciente.jsp'; return false;"
 				   class="add-student-button"
-			/>
+			/>  -->
+			
+			<form action="PacienteControllerServlet" method="GET">
+						
+			
+			<input type="hidden" name="command" value="CADASTRO" />
+			<input type="submit" value="Cadastro de Pacientes" class="save" />
+			</form>
 			
 			<table>
 			

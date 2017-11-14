@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 <head>
@@ -49,67 +50,100 @@
 					
 					<tr>
 						<td><label>CRM:</label></td>
-						<td><input type="text" name="crmMedico" maxlength="20"
+						<td><input type="number" name="crmMedico" maxlength="20"
 								   value="${MEDICO.crmMedico}" /></td>
 					</tr>
 					
 					<tr>
 						<td><label>Especialidade:</label></td>
-						<td><input type="text" name="especialidadeMedico" 
-								   value="${MEDICO.especialidadeMedico}" /></td>
+						<td>
+						<select name="especialidadeMedico">
+    						<c:forEach items="${ESPECIALIDADES_FORM}" var="tempEsp">
+    						
+    							<c:choose>
+    							<c:when test="${MEDICO.especialidadeMedico == tempEsp.codEspecialidade }">
+        							<option value="${tempEsp.codEspecialidade}" selected><c:out value="${tempEsp.nomeEspecialidade}" /></option>
+    							</c:when>
+    							
+    							<c:otherwise>
+    								<option value="${tempEsp.codEspecialidade}"><c:out value="${tempEsp.nomeEspecialidade}" /></option>
+    							</c:otherwise>
+    							</c:choose>
+    							
+    						</c:forEach>
+						</select>
+						</td>
+						<!-- <td><input type="text" name="especialidadeMedico" 
+								   value="${MEDICO.especialidadeMedico}" /></td> -->
 					</tr>
 					
 						<tr>
 						<td><label>RG:</label></td>
-						<td><input type="text" name="rgMedico" 
+						<td><input type="number" name="rgMedico" maxlength="11" 
 								   value="${MEDICO.rgMedico}" /></td>
 					</tr>	
 					
 						<tr>
 						<td><label>CPF:</label></td>
-						<td><input type="text" name="cpfMedico" 
+						<td><input type="number" name="cpfMedico" maxlength="11"
 								   value="${MEDICO.cpfMedico}" /></td>
 					</tr>	
 					
 						<tr>
 						<td><label>Endereço:</label></td>
-						<td><input type="text" name="enderecoMedico" 
+						<td><input type="text" name="enderecoMedico" maxlength="50"
 								   value="${MEDICO.enderecoMedico}" /></td>
 					</tr>	
 					
 						<tr>
 						<td><label>Cidade:</label></td>
-						<td><input type="text" name="cidadeMedico" 
-								   value="${MEDICO.cidadeMedico}" /></td>
+						<td>
+						<select name="cidadeMedico">
+    						<c:forEach items="${CIDADES_FORM}" var="tempCid">
+    							
+    							<c:choose>
+    								<c:when test="${MEDICO.cidadeMedico == tempCid.codCidade }">
+        								<option value="${tempCid.codCidade}" selected><c:out value="${tempCid.nomeCidade}" /></option>
+        							</c:when>
+        							<c:otherwise>
+        								<option value="${tempCid.codCidade}"><c:out value="${tempCid.nomeCidade}" /></option>
+        							</c:otherwise>
+        						</c:choose>	
+        							
+    						</c:forEach>
+						</select>
+						</td>
+						<!-- <td><input type="text" name="cidadeMedico" maxlength="20"
+								   value="${MEDICO.cidadeMedico}" /></td> -->
 					</tr>	
 					
 						<tr>
 						<td><label>Bairro:</label></td>
-						<td><input type="text" name="bairroMedico" 
+						<td><input type="text" name="bairroMedico" maxlength="20"
 								   value="${MEDICO.bairroMedico}" /></td>
 					</tr>	
 					
 						<tr>
 						<td><label>Estado:</label></td>
-						<td><input type="text" name="estadoMedico" 
+						<td><input type="text" name="estadoMedico" maxlength="2"
 								   value="${MEDICO.estadoMedico}" /></td>
 					</tr>	
 					
 					<tr>
 						<td><label>Telefone:</label></td>
-						<td><input type="text" name="telefoneMedico" 
+						<td><input type="tel" name="telefoneMedico" maxlength="20"
 								   value="${MEDICO.telefoneMedico}" /></td>
 					</tr>
 					
 					<tr>
 						<td><label>E-mail:</label></td>
-						<td><input type="text" name="emailMedico" 
+						<td><input type="email" name="emailMedico" max="50"
 								   value="${MEDICO.emailMedico}" /></td>
 					</tr>
 					
 					<tr>
 						<td><label>Nascimento:</label></td>
-						<td><input type="text" name="datanascMedico" 
+						<td><input type="date" name="datanascMedico" 
 								   value="${MEDICO.datanascMedico}" /></td>
 					</tr>
 					
