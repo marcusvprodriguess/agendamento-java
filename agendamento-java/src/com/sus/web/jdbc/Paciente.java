@@ -22,7 +22,7 @@ public class Paciente {
 	private int rgPaciente;
 	private int cpfPaciente;
 	private String enderecoPaciente;
-	private String cidadePaciente;
+	private int cidadePaciente;
 	private String bairroPaciente;
 	private String estadoPaciente;
 	private String emailPaciente;
@@ -31,7 +31,7 @@ public class Paciente {
 	
 	
 	public Paciente(int codPaciente, String nomePaciente, int rgPaciente, int cpfPaciente, 
-			String enderecoPaciente, String cidadePaciente, String bairroPaciente, String estadoPaciente,
+			String enderecoPaciente, int cidadePaciente, String bairroPaciente, String estadoPaciente,
 			String emailPaciente, String telefonePaciente, String  datanascPaciente) {
 		this.codPaciente = codPaciente;
 		this.nomePaciente = nomePaciente;
@@ -47,7 +47,7 @@ public class Paciente {
 	}
 	
 	public Paciente(String nomePaciente, int rgPaciente, int cpfPaciente, 
-			String enderecoPaciente, String cidadePaciente, String bairroPaciente, String estadoPaciente,
+			String enderecoPaciente, int cidadePaciente, String bairroPaciente, String estadoPaciente,
 			String emailPaciente, String telefonePaciente, String  datanascPaciente) {
 
 		this.nomePaciente = nomePaciente;
@@ -111,11 +111,11 @@ public class Paciente {
 		this.enderecoPaciente = enderecoPaciente;
 	}
 
-	public String getCidadePaciente() {
+	public int getCidadePaciente() {
 		return cidadePaciente;
 	}
 
-	public void setCidadePaciente(String cidadePaciente) {
+	public void setCidadePaciente(int cidadePaciente) {
 		this.cidadePaciente = cidadePaciente;
 	}
 

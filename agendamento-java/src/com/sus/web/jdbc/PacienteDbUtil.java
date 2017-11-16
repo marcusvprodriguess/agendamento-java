@@ -63,7 +63,7 @@ public class PacienteDbUtil {
 				int rgPaciente = myRs.getInt("cd_RG");
 				int cpfPaciente = myRs.getInt("cd_CPF");
 				String enderecoPaciente = myRs.getString("ds_Endereco");
-				String cidadePaciente = myRs.getString("nm_Cidade");
+				int cidadePaciente = myRs.getInt("nm_Cidade");
 				String bairroPaciente = myRs.getString("nm_Bairro");
 				String estadoPaciente = myRs.getString("sg_Estado");
 				String emailPaciente = myRs.getString("ds_Email");
@@ -148,7 +148,7 @@ public class PacienteDbUtil {
 			myStmt.setInt(2, paciente.getRgPaciente());
 			myStmt.setInt(3, paciente.getCpfPaciente());
 			myStmt.setString(4, paciente.getEnderecoPaciente());
-			myStmt.setString(5, paciente.getCidadePaciente());
+			myStmt.setInt(5, paciente.getCidadePaciente());
 			myStmt.setString(6, paciente.getBairroPaciente());
 			myStmt.setString(7, paciente.getEstadoPaciente());
 			myStmt.setString(8, paciente.getEmailPaciente());
@@ -199,7 +199,7 @@ public class PacienteDbUtil {
 				int rgPaciente = myRs.getInt("cd_RG");
 				int cpfPaciente = myRs.getInt("cd_CPF");
 				String enderecoPaciente = myRs.getString("ds_Endereco");
-				String cidadePaciente = myRs.getString("nm_Cidade");
+				int cidadePaciente = myRs.getInt("nm_Cidade");
 				String bairroPaciente = myRs.getString("nm_Bairro");
 				String estadoPaciente = myRs.getString("sg_Estado");
 				String emailPaciente = myRs.getString("ds_Email");
@@ -247,7 +247,7 @@ public class PacienteDbUtil {
 			myStmt.setInt(2, paciente.getRgPaciente());
 			myStmt.setInt(3, paciente.getCpfPaciente());
 			myStmt.setString(4, paciente.getEnderecoPaciente());
-			myStmt.setString(5, paciente.getCidadePaciente());
+			myStmt.setInt(5, paciente.getCidadePaciente());
 			myStmt.setString(6, paciente.getBairroPaciente());
 			myStmt.setString(7, paciente.getEstadoPaciente());
 			myStmt.setString(8, paciente.getEmailPaciente());

@@ -82,7 +82,17 @@
 						<td> ${tempPaciente.rgPaciente} </td>
 						<td> ${tempPaciente.cpfPaciente} </td>
 						<td> ${tempPaciente.enderecoPaciente} </td>
-						<td> ${tempPaciente.cidadePaciente} </td>
+						
+						<!-- LOOP PELA LISTA DE CIDADES PARA DAR MATCH NO CODIGO DA TABELA MEDICO -->
+						<td>
+						<c:forEach items="${CIDADES_FORM}" var="tempCid" >
+							<c:if test="${tempPaciente.cidadePaciente == tempCid.codCidade }">
+								${tempCid.nomeCidade}
+							</c:if>
+						</c:forEach>
+						</td>					
+						
+						<!-- <td> ${tempPaciente.cidadePaciente} </td> -->
 						<td> ${tempPaciente.bairroPaciente} </td>
 						<td> ${tempPaciente.estadoPaciente} </td>
 						<td> ${tempPaciente.emailPaciente} </td>

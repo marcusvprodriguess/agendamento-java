@@ -79,11 +79,32 @@
 						<td> ${tempMedico.codMedico} </td>
 						<td> ${tempMedico.crmMedico} </td>
 						<td> ${tempMedico.nomeMedico} </td>
-						<td> ${tempMedico.especialidadeMedico} </td>
+						
+						<!-- LOOP PELA LISTA DE ESPECIALIDADES PARA DAR MATCH NO CODIGO DA TABELA MEDICO -->
+						<td>
+						<c:forEach items="${ESPECIALIDADES_FORM}" var="tempEspec" >
+							<c:if test="${tempMedico.especialidadeMedico == tempEspec.codEspecialidade }">
+								${tempEspec.nomeEspecialidade}
+							</c:if>
+						</c:forEach>
+						</td>
+						
+						<!--  <td> ${tempMedico.especialidadeMedico} </td> --> 
+						
 						<td> ${tempMedico.rgMedico} </td>
 						<td> ${tempMedico.cpfMedico} </td>
 						<td> ${tempMedico.enderecoMedico} </td>
-						<td> ${tempMedico.cidadeMedico} </td>
+						
+						<!-- LOOP PELA LISTA DE CIDADES PARA DAR MATCH NO CODIGO DA TABELA MEDICO -->
+						<td>
+						<c:forEach items="${CIDADES_FORM}" var="tempCid" >
+							<c:if test="${tempMedico.cidadeMedico == tempCid.codCidade }">
+								${tempCid.nomeCidade}
+							</c:if>
+						</c:forEach>
+						</td>
+						
+						<!-- <td> ${tempMedico.cidadeMedico} </td> -->
 						<td> ${tempMedico.bairroMedico} </td>
 						<td> ${tempMedico.estadoMedico} </td>
 						<td> ${tempMedico.emailMedico} </td>

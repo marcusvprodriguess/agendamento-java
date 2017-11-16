@@ -136,7 +136,7 @@ public class PacienteControllerServlet extends HttpServlet {
 		int rgPaciente = Integer.parseInt(request.getParameter("rgPaciente"));
 		int cpfPaciente = Integer.parseInt(request.getParameter("cpfPaciente"));
 		String enderecoPaciente = request.getParameter("enderecoPaciente");
-		String cidadePaciente = request.getParameter("cidadePaciente");
+		int cidadePaciente = Integer.parseInt(request.getParameter("cidadePaciente"));
 		String bairroPaciente = request.getParameter("bairroPaciente");
 		String estadoPaciente = request.getParameter("estadoPaciente");
 		String emailPaciente = request.getParameter("emailPaciente");
@@ -189,7 +189,7 @@ public class PacienteControllerServlet extends HttpServlet {
 		int rgPaciente = Integer.parseInt(request.getParameter("rgPaciente"));
 		int cpfPaciente = Integer.parseInt(request.getParameter("cpfPaciente"));
 		String enderecoPaciente = request.getParameter("enderecoPaciente");
-		String cidadePaciente = request.getParameter("cidadePaciente");
+		int cidadePaciente = Integer.parseInt(request.getParameter("cidadePaciente"));
 		String bairroPaciente = request.getParameter("bairroPaciente");
 		String estadoPaciente = request.getParameter("estadoPaciente");
 		String emailPaciente = request.getParameter("emailPaciente");
@@ -219,6 +219,9 @@ public class PacienteControllerServlet extends HttpServlet {
 		// add students to the request
 		request.setAttribute("PACIENTE_LIST", pacientes);
 				
+		//seta parametros com list de cidades
+		getDadosParaForm(request, response);
+		
 		// send to JSP page (view)
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/list-pacientes.jsp");
 		dispatcher.forward(request, response);

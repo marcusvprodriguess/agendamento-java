@@ -117,6 +117,7 @@ public class MedicoControllerServlet extends HttpServlet {
 
 	}
 	
+
 	
 	//APAGA
 	private void deleteMedico(HttpServletRequest request, HttpServletResponse response)
@@ -238,9 +239,12 @@ public class MedicoControllerServlet extends HttpServlet {
 		// get students from db util
 		List<Medico> medicos = MedicoDbUtil.getMedicos();
 		
-		// add students to the request
+		// add medico to the request
 		request.setAttribute("MEDICO_LIST", medicos);
 				
+		//seta parametros com list de especialidade e cidades
+		getDadosParaForm(request, response);
+		
 		// send to JSP page (view)
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/list-medicos.jsp");
 		dispatcher.forward(request, response);
